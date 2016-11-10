@@ -1,9 +1,9 @@
-eval $(docker-machine env solr)
+eval $(docker-machine env esolr)
 docker-compose stop;
-docker-machine stop solr;
-docker-machine rm solr -y;
-docker-machine create -d virtualbox solr;
-eval $(docker-machine env solr)
+docker-machine stop esolr;
+docker-machine rm esolr -y;
+docker-machine create -d virtualbox esolr;
+eval $(docker-machine env esolr)
 docker rm -f $(docker ps -a -q);
 #docker rmi $(docker images -q)
 docker-compose build;
